@@ -42,7 +42,7 @@ If you would like to contribute to this application, please consult the guidelin
 
 ## Tests
 
-[!Alt text](./assets/images/tech-quiz-ss.PNG)
+![Alt text](./assets/images/tech-quiz-ss.PNG)
 
 ## Questions
 
