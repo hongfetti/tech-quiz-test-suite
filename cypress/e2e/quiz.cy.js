@@ -74,7 +74,6 @@ describe("Restarting the quiz", () => {
   });
 
   it('should restart the quiz when the "Take New Quiz" button is pressed', () => {
-    // Answer all 10 questions
     for (let i = 0; i < 10; i++) {
       cy.get("h2").then(($question) => {
         const currentQuestion = $question.text();
@@ -82,13 +81,10 @@ describe("Restarting the quiz", () => {
       });
     }
 
-    // Ensure "Quiz Completed" message is shown
     cy.get("h2").should("contain", "Quiz Completed");
 
-    // Click the "Take New Quiz" button
     cy.get("button").contains("Take New Quiz").click();
 
-    // Verify that the quiz restarts
     cy.get("h2").should("not.contain", "Quiz Completed");
     cy.get("h2").should("be.visible").and("not.be.empty");
     cy.get(".btn-primary").should("have.length.at.least", 1).and("be.visible");
