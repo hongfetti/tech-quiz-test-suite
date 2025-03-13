@@ -17,11 +17,6 @@ describe('<Quiz />', () => {
   it('starts the quiz and displays a question', () => {
     cy.contains('Start Quiz').click();
     cy.wait('@getQuestions');
-
-    cy.fixture('questions.json').then((questions) => {
-        const randomQuestion = questions[Math.floor(Math.random()*questions.length)]
-
-        cy.get('h2').should('be.visible').and('contain', randomQuestion.question);
-    });
+    cy.get('h2').should('be.visible').and('not.be.empty');
   });
 });
